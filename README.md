@@ -1,5 +1,8 @@
 # Chalice View
 
+[![Coverage Status](https://coveralls.io/repos/github/green-latte/chalice-view/badge.svg)](https://coveralls.io/github/green-latte/chalice-view)
+[![pypi](https://img.shields.io/pypi/v/chalice_view.svg)](https://img.shields.io/pypi/v/chalice_view.svg)
+
 Extension classes for develop  [chalice](https://github.com/awslabs/chalice)
 
 ## installation
