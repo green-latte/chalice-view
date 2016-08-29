@@ -2,6 +2,11 @@
 
 Extension classes for develop  [chalice](https://github.com/awslabs/chalice)
 
+## installation
+```sh
+$ pip install chalice_view
+```
+
 ## how to use
 
 **Chalice View** load your .chalice directory and set your project name and development mode.
@@ -20,7 +25,7 @@ class SampleView(View):
 
 
 # initialize app manager to generate chalice application
-manager = AppManager())
+manager = AppManager(debug=True)
 manager.register('/version1/{name}', SampleView)
 # chalice will read following app instance
 app = manager.generate_app()
