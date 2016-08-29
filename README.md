@@ -13,21 +13,40 @@ from chalice_view.manager import AppManager
 from chalice_view.view import View
 
 
+# define custom view based on chalice_view.View class
 class SampleView(View):
   def get(self, request, name):
     return {'hello': name}
 
-  def post(self, request, *args):
-    serializer = SampleSerializer(request.query_params)
-    if serializer.is_valid:
-      return serializer.data
-    else:
-      return {'error': 'country is required'}
 
+# initialize app manager to generate chalice application
 manager = AppManager())
 manager.register('/version1/{name}', SampleView)
-
+# chalice will read following app instance
 app = manager.generate_app()
+```
+
+## testing
+```python
+import unittest
+from chalice_view.test import ChaliceRequestFactory
+
+class TestCustomResponse(unittest.TestCase):
+  def setUp(self):
+    # 1. initialize request factory
+    self.factory = ChaliceRequestFactory()
+    # 2. generate custom request parser
+    self.view = manager.as_view()
+
+  def test_sample(self):
+    # 3. create request and call view method
+    request = factory.get('/version1/{name}', uri_params={'name': 'kate'})
+    response = view(request)
+    # call test
+    self.assertTrue({'hello': 'kate'}, response)
+
+if __name__ == '__main__':
+  unittest.main()
 ```
 
 ## todo
@@ -38,6 +57,14 @@ from . import App, View, serializers, router
 class SampleSerializer(serializers.Serializer):
   country = serializers.StringField(max_length=20)
   zipcode = serializers.IntegerField(required=False)
+
+class SampleView(View)
+  def post(self, request, *args):
+    serializer = SampleSerializer(request.json_body)
+    if serializer.is_valid:
+      return serializer.data
+    else:
+      return {'error': 'country is required'}
 ```
 
 ```python
