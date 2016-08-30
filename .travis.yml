@@ -1,10 +1,8 @@
-language: python
-python:
-  - "2.7"
-sudo: false
-install:
-  - pip install -e .
-  - travis_retry pip install -r requirements-dev.txt
-# script:
-#   - make test
-#   - make check
+deploy:
+  provider: pypi
+  user: green-latte
+  password:
+    secure: BHgwUt8eHfe+0vRMEl4qANManYTACTBfESmbSKMMx6lwZQNUlDRTCqMGvvVp4zWJStr0fcXWmu6Th3C7jHoPm8zUMdXgTodgtiZczUr+/zo7/EPIE0/lRuIIR/ldw+/q4zj+2+RQFdWh8vJeHqrI73oFAS/zT4VCX4BGEmuTE/TNbwDbZ5SPXIAQU3zIfxXXLncqRi1vrQGFMedxRBSiu85JKvBmjznm/+0y1eLoP4rxdj/9JURENqGSBqxclzW0IadWTHdsFBoT0aOvQjsOgesAmKVkYBoYtCnbBxxmeZGM3s6e55rgfN+n8J8bjUQGTcn9cq1hB2FE+W4BrEUdDx4NWub8TQHh/h1Z3J7aonqCPs7leZ5w4UEiqQIpqyA+Yj5S+FHBxj8tR89/YHDCvU5AHzw9fEOrs460OwLvrb0tzUyJQ4RoQEt8F6NVWSnax00zP9HGd0yVqxG4n5R7MzNlgwrxQwHQOMf7gigRKuaKpFOmqiAKk5tvSyvbMM/gptf7MimNFwOmLitS7dsR73M3vyxNDHBb2QE5l1EXSjqzaVggoql4nyXGYwU2wl6jfdqDL+545ModB/T4/yBomaq9FN4/BigvzP9vePral/A5MpcbjrwxV7MUYTFBkf3qe0ONYMvJkN5OKP+mUdVc4gWD1FtQdSG1OTzmXgZdwkg=
+  on:
+    distributions: sdist bdist_wheel
+    repo: green-latte/chalice-view
