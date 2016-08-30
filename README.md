@@ -1,5 +1,6 @@
 # Chalice View
 
+[![travis](https://travis-ci.org/green-latte/chalice-view.svg)](https://travis-ci.org/green-latte/chalice-view.svg)
 [![Coverage Status](https://coveralls.io/repos/github/green-latte/chalice-view/badge.svg)](https://coveralls.io/github/green-latte/chalice-view)
 [![pypi](https://img.shields.io/pypi/v/chalice_view.svg)](https://img.shields.io/pypi/v/chalice_view.svg)
 
