@@ -4,7 +4,6 @@ python:
 sudo: false
 install:
   - pip install -e .
-  - travis_retry pip install -r requirements-test.txt
 deploy:
   provider: pypi
   user: green-latte
